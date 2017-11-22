@@ -15,8 +15,105 @@
         "level": "alpha",
         "patch": 0
       }
-    }
+    },
+    "timestamp": "2017-11-22T14:59:41+11:00"
   },
   "software": {
+    "base": {
+      "name": "volmgr",
+      "accepts": [
+        "ManagedEngine",
+        "ManagedService"
+      ],
+      "publisher_namespace": "EnginesSystem",
+      "type_path": "filesystem/local/filesystem",
+      "service_handle_field": "service_name",
+      "parent_image": "engines/servicebase",
+      "run_as_user": "volmgr",
+      "deployment_type": "worker",
+      "memory": {
+        "required": 32,
+        "recommended": 32
+      },
+      "persistent": true,
+      "attach_post_build": true,
+      "attach_requires_restart": true
+    },
+    "constants": [
+      {
+        "name": "backup_support",
+        "value": "true"
+      }
+    ],
+    "target_environment_variables": [
+      {
+        "variable_name": "engine_path",
+        "environment_variable_name": "VOLDIR"
+      },
+      {
+        "variable_name": "service_name",
+        "environment_variable_name": "volume_name"
+      }
+    ],
+    "consumer_params": [
+      {
+        "name": "service_name",
+        "value": "_Engines_Builder(engine_name) ",
+        "mandatory": true,
+        "immutable": true,
+        "ask_at_build_time": true,
+        "input": {
+          "type": "string",
+          "label": "Service tag name"
+        }
+      },
+      {
+        "name": "volume_src",
+        "input": {
+          "type": "string",
+          "label": "Volume source path"
+        }
+      },
+      {
+        "name": "engine_path",
+        "mandatory": true,
+        "input": {
+          "type": "boolean",
+          "label": "Engine path"
+        }
+      },
+      {
+        "name": "permissions",
+        "value": "ro",
+        "mandatory": true,
+        "input": {
+          "type": "select",
+          "collection": {
+            "items": {
+              "ro": "Read only",
+              "rw": "Write access"
+            }
+          }
+        }
+      },
+      {
+        "name": "user",
+        "value": "_Engines_Builder(data_uid)",
+        "mandatory": true,
+        "input": {
+          "type": "boolean",
+          "label": "Owner"
+        }
+      },
+      {
+        "name": "group",
+        "value": "_Engines_Builder(data_gid)",
+        "mandatory": true,
+        "input": {
+          "type": "string",
+          "label": "Group"
+        }
+      }
+    ]
   }
 }

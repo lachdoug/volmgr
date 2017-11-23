@@ -16,7 +16,7 @@
         "patch": 0
       }
     },
-    "timestamp": "2017-11-24T09:52:13+11:00"
+    "timestamp": "2017-11-24T10:01:05+11:00"
   },
   "software": {
     "base": {
@@ -37,7 +37,9 @@
       },
       "persistent": true,
       "attach_post_build": true,
-      "attach_requires_restart": true
+      "attach_requires_restart": true,
+      "shareable": true,
+      "consumer_exportable": true
     },
     "constants": [
       {

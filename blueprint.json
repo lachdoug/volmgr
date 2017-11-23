@@ -16,7 +16,7 @@
         "patch": 0
       }
     },
-    "timestamp": "2017-11-24T09:29:16+11:00"
+    "timestamp": "2017-11-24T09:52:13+11:00"
   },
   "software": {
     "base": {
@@ -101,7 +101,7 @@
         "value": "_Engines_Builder(data_uid)",
         "mandatory": true,
         "input": {
-          "type": "boolean",
+          "type": "string",
           "label": "Owner"
         }
       },

@@ -16,7 +16,7 @@
         "patch": 0
       }
     },
-    "timestamp": "2017-11-23T08:46:37+11:00"
+    "timestamp": "2017-11-24T09:29:16+11:00"
   },
   "software": {
     "base": {
@@ -78,7 +78,7 @@
         "name": "engine_path",
         "mandatory": true,
         "input": {
-          "type": "boolean",
+          "type": "string",
           "label": "Engine path"
         }
       },

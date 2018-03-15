@@ -2,8 +2,8 @@
   "schema": {
     "type": "service_blueprint",
     "version": {
-      "major": 1,
-      "minor": 0
+      "major": 0,
+      "minor": 1
     },
     "origin": "Engines Developer Studio 0.2"
   },
@@ -21,20 +21,18 @@
   "software": {
     "base": {
       "name": "volmgr",
-      "accepts": [
-        "ManagedEngine",
-        "ManagedService"
-      ],
       "publisher_namespace": "EnginesSystem",
       "type_path": "filesystem/local/filesystem",
       "service_handle_field": "service_name",
       "parent_image": "engines/servicebase",
-      "run_as_user": "volmgr",
       "deployment_type": "worker",
       "memory": {
         "required": 32,
         "recommended": 32
       },
+      "run_as_user": "volmgr"
+    },
+    "disposition": {
       "persistent": true,
       "attach_post_build": true,
       "attach_requires_restart": true,
@@ -57,6 +55,12 @@
         "environment_variable_name": "volume_name"
       }
     ],
+    "consumers": {
+      "accepts": [
+        "ManagedEngine",
+        "ManagedService"
+      ]
+    },
     "consumer_params": [
       {
         "name": "service_name",

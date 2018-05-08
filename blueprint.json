@@ -16,7 +16,7 @@
         "patch": 0
       }
     },
-    "timestamp": "2017-11-24T10:01:05+11:00"
+    "timestamp": "2018-05-09T09:10:17+10:00"
   },
   "software": {
     "base": {
@@ -90,7 +90,7 @@
       },
       {
         "name": "permissions",
-        "value": "ro",
+        "value": "rw",
         "mandatory": true,
         "input": {
           "type": "select",

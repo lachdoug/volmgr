@@ -16,7 +16,7 @@
         "patch": 0
       }
     },
-    "timestamp": "2018-05-09T09:10:17+10:00"
+    "timestamp": "2019-04-30T13:36:12+10:00"
   },
   "software": {
     "base": {
@@ -26,6 +26,8 @@
       "service_handle_field": "service_name",
       "parent_image": "engines/servicebase",
       "deployment_type": "worker",
+      "default_stop_timeout": 0,
+      "restart_attempts": 0,
       "memory": {
         "required": 32,
         "recommended": 32
@@ -119,6 +121,52 @@
           "type": "string",
           "label": "Group"
         }
+      },
+      {
+        "name": "fw_user",
+        "value": "_Engines_Builder(cont_user_id)",
+        "mandatory": true,
+        "input": {
+          "type": "string"
+        }
+      }
+    ],
+    "actionators": [
+      {
+        "name": "set_home_access_level",
+        "return_type": "json",
+        "variables": [
+          {
+            "name": "home",
+            "mandatory": true,
+            "input": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "access_level",
+            "mandatory": true,
+            "input": {
+              "type": "select",
+              "collection": {
+                "items": {
+                  "6650": "private",
+                  "6660": "group read",
+                  "6666": "public read",
+                  "6677": "public write"
+                }
+              }
+            }
+          },
+          {
+            "name": "dir",
+            "value": "/",
+            "input": {
+              "type": "string",
+              "label": "Directory"
+            }
+          }
+        ]
       }
     ]
   }

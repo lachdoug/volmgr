@@ -16,7 +16,7 @@
         "patch": 0
       }
     },
-    "timestamp": "2019-07-04T12:35:35+10:00"
+    "timestamp": "2019-07-05T13:59:57+10:00"
   },
   "software": {
     "base": {
@@ -129,6 +129,14 @@
         "immutable": true,
         "input": {
           "type": "string"
+        }
+      },
+      {
+        "name": "exclude_from_backup",
+        "value": "false",
+        "immutable": true,
+        "input": {
+          "type": "checkbox_boolean"
         }
       }
     ],

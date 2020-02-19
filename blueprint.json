@@ -16,6 +16,11 @@
         "patch": 0
       }
     },
+    "software": {
+      "display": {
+        "title": "Volume Manager1"
+      }
+    },
     "timestamp": "2019-07-06T17:28:02+10:00"
   },
   "software": {
